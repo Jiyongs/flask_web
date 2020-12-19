@@ -6,12 +6,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>바인딩 텍스트 : {{my_str}}</h1>
-        <h1>바인딩 리스트 : {{my_list}}</h1>
-        <h1>for문 테스트</h1>
+        <h1>게시글 목록</h1>
+        <a href="{{url_for('post', post_id='new')}}">새 글</a>
         <ul>
-            {% for l in my_list%}
-            <li>{{l}}</li>
+            {% for key, val in board_dict.items() %}
+            <li style="padding:10px">
+                <!-- url_for('class name', args_name:args_value) -->
+                <a href="{{url_for('post',post_id=key)}}">no.{{key}} ) 제 목 : {{val['title']}}</a> <br>
+                작성자 : {{val['user']}} <br>
+                작성일 : {{val['write_date']}} <br>
+            </li>
             {% endfor %}
         </ul>
     </div>

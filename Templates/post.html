@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글 조회</title>
+</head>
+<body>
+    {% if board_dict %}
+        <h3 id="title" style="width:500px">제 목&emsp;: {{board_dict['title']}} </h3>
+        <h3 id="writer">작성자&emsp;: {{board_dict['user']}} </h3>
+        <h3 id="write_date">작성일&emsp;: {{board_dict['write_date']}} </h3>
+        <h3>내 용</h3>
+        <textarea id="contents" style="width:700px; height:500px; overflow-y:scroll;">{{board_dict['contents']}}</textarea>
+        <br>
+        <a href="{{url_for('post',post_id=key)}}">수정</a>
+        <a href="{{url_for('post',post_id=key)}}">삭제</a>
+    {% else %}
+        <h3>제 목 : <input id="title" type="text" style="width:500px"> </h3>
+        <h3>작성자 : <input id="writer" type="text"> </h3>
+        <h3>내 용 </h3>
+        <input id="contents" type="text" style="width:700px; height:500px;">
+        <br>
+        <a href="{{url_for('post', post_id=key)}}">작성</a>
+    {% endif %}
+</body>
+</html>
