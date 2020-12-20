@@ -8,6 +8,7 @@
 - python
 - flask : a lightweight WSGI(Web Server Gateway Interface) web application framework
 - jinja : a templating engine for Python
+- docker : a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings
 - mongo db
 
 ## 계획
