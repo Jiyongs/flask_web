@@ -7,12 +7,12 @@
 <body>
     <div class="container">
         <h1>게시글 목록</h1>
-        <a href="{{url_for('post', post_id='new')}}">새 글</a>
+        <a href="{{url_for('template_posts', post_id='new')}}">새 글</a>
         <ul>
             {% for key, val in board_dict.items() %}
             <li style="padding:10px">
                 <!-- url_for('class name', args_name:args_value) -->
-                <a href="{{url_for('post',post_id=key)}}">no.{{key}} ) 제 목 : {{val['title']}}</a> <br>
+                <a href="{{url_for('template_posts',post_id=key)}}">no.{{key}} ) 제 목 : {{val['title']}}</a> <br>
                 작성자 : {{val['user']}} <br>
                 작성일 : {{val['write_date']}} <br>
             </li>

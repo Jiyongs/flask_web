@@ -6,21 +6,29 @@
 </head>
 <body>
     {% if board_dict %}
-        <h3 id="title" style="width:500px">제 목&emsp;: {{board_dict['title']}} </h3>
-        <h3 id="writer">작성자&emsp;: {{board_dict['user']}} </h3>
-        <h3 id="write_date">작성일&emsp;: {{board_dict['write_date']}} </h3>
+    <form method="post" action="{{url_for('edit_post')}}">
+        <input type="hidden" name="post_id" value="{{post_id}}">
+        <input type="hidden" name="title" value="{{board_dict['title']}}">
+        <input type="hidden" name="user" value="{{board_dict['user']}}">
+        <input type="hidden" name="write_date" value="{{board_dict['write_date']}}">
+        <h3>제 목&emsp;: {{board_dict['title']}} </h3>
+        <h3>작성자&emsp;: {{board_dict['user']}} </h3>
+        <h3>작성일&emsp;: {{board_dict['write_date']}} </h3>
         <h3>내 용</h3>
-        <textarea id="contents" style="width:700px; height:500px; overflow-y:scroll;">{{board_dict['contents']}}</textarea>
+        <input name="contents" style="width:700px; height:500px; overflow-y:scroll;" value="{{board_dict['contents']}}">
         <br>
-        <a href="{{url_for('post',post_id=key)}}">수정</a>
-        <a href="{{url_for('post',post_id=key)}}">삭제</a>
+        <input type="submit" value="수정">
+    </form>
+    <button type="button" onclick="window.location.href='{{url_for('del_post',post_id=post_id)}}'">삭제</button>
     {% else %}
-        <h3>제 목 : <input id="title" type="text" style="width:500px"> </h3>
-        <h3>작성자 : <input id="writer" type="text"> </h3>
+    <form method="post" action="{{url_for('create_post')}}">
+        <h3>제 목 : <input name="title" type="text" style="width:500px"> </h3>
+        <h3>작성자 : <input name="user" type="text"> </h3>
         <h3>내 용 </h3>
-        <input id="contents" type="text" style="width:700px; height:500px;">
+        <input name="contents" type="text" style="width:700px; height:500px;">
         <br>
-        <a href="{{url_for('post', post_id=key)}}">작성</a>
+        <input type="submit" value="등록">
+    </form>
     {% endif %}
 </body>
 </html>
