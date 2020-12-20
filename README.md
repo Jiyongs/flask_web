@@ -3,6 +3,7 @@
 
 ## 구현 목표
 - crud
+- mongo db
 - docker
 
 ## 사용 기술
