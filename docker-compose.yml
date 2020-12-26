@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  flask_web:
+    build:
+      context: .
+      dockerfile: ./compose/flask/Dockerfile-dev
+    command: python flask_template.py
+    volumes:
+      - ./:/flask_web/
+    ports:
+      - "5000:5000"
+    links:
+      - mongo_db
+
+  mongo_db:
+    image: mongo:latest
+    volumes:
+      - ./docker/data:/var/lib/mongodb/data

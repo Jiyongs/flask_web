@@ -2,7 +2,8 @@ from bson.objectid import ObjectId
 from pymongo import MongoClient
 
 def connect_mongodb(db, collection):
-    mongo_client = MongoClient("mongodb://localhost:27017/")
+    mongo_client = MongoClient("mongodb://mongo_db:27017/")
+    # mongo_client = MongoClient("mongodb://localhost:27017/") #local venv 실행용
     # print(mongo_client.list_database_names())
     db_instance = mongo_client[db]
     return db_instance[collection]

@@ -1,0 +1,12 @@
+Install Docker in Mac
+
+설치
+방법1. Homebrew 사용
+방법2. docker for mac 실행파일 사용 (선택)
+
+스크립트
+* https://www.44bits.io/ko/post/almost-perfect-development-environment-with-docker-and-docker-compose
+# docker image 빌드
+docker build -t flask_web .
+# docker-compose 실행
+docker-compose up -d
