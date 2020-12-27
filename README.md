@@ -18,7 +18,7 @@
 
 ## 사용 방법
 1. 실행 pc에 docker 설치
-- 링크 : https://www.docker.com/get-started
+- https://www.docker.com/get-started
 2. 프로젝트 경로에서 터미널을 통해 docker image 생성 (초기 실행에만)
 - -t : image tag 설정
 ~~~
@@ -29,3 +29,5 @@ docker build -t [image_name] .
 ~~~
 docker-compose up -d
 ~~~
+4. 설정한 포트에서 정상 실행 확인
+- http://0.0.0.0:5000/
