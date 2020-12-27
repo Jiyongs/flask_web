@@ -15,3 +15,17 @@
 - [x] ~12/20 : crud 구현
 - [x] ~12/22 : mongo db 연동
 - [x] ~12/27 : docker 연동
+
+## 사용 방법
+1. 실행 pc에 docker 설치
+- 링크 : https://www.docker.com/get-started
+2. 프로젝트 경로에서 터미널을 통해 docker image 생성 (초기 실행에만)
+- -t : image tag 설정
+~~~
+docker build -t [image_name] .
+~~~
+3. docker compose 실행
+- -d : 백그라운드 작업
+~~~
+docker-compose up -d
+~~~
